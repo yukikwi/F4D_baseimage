@@ -1,4 +1,4 @@
-FROM fedora:27
+FROM fedora:28
 
 RUN dnf install -y make gcc-gfortran findutils wget htop yum-plugin-ovl \
                    git gnuplot python tk tkinter python-imaging-tk \
