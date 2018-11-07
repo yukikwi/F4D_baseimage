@@ -1,6 +1,8 @@
-FROM fedora:28
+FROM fedora:29
 
-RUN dnf install -y make gcc-gfortran findutils wget htop yum-plugin-ovl \
+RUN dnf update -y && \
+    dnf install -y make gcc-gfortran findutils wget htop yum-plugin-ovl \
                    gnuplot python tk tkinter python-imaging-tk \
-                   python2-pydicom python2-numpy desktop-file-utils && \
-    dnf clean all
+                   python2-pip python2-scipy python2-numpy desktop-file-utils && \
+    dnf clean all && \
+    pip install -U pydicom
