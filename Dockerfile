@@ -1,4 +1,4 @@
-FROM fedora:29
+FROM fedora:30
 
 RUN dnf update -y && \
     dnf install -y make gcc-gfortran findutils wget htop yum-plugin-ovl \
