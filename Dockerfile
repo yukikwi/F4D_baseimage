@@ -1,11 +1,10 @@
-FROM fedora:34
+FROM ubuntu:focal
 
-# Using the list of packages from
-# https://fluka-forum.web.cern.ch/t/software-requirements-of-fluka-and-flair/94
-
-RUN dnf update -y && \
-    dnf install -y make gcc-gfortran \ 
-                   python-pillow-tk python-scipy python-numpy python-matplotlib \
-                   python-pydicom gnuplot \
-                   which less emacs desktop-file-utils && \
-    dnf clean all 
+RUN apt update && \
+    apt install -y make gcc gfortran curl wget less && \
+    apt install -y python tk gnuplot-x11 python-tk python-numpy desktop-file-utils && \
+    apt install -y python-imaging-tk && \
+    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py && \
+    python get-pip.py && \
+    apt clean && \
+    pip install -U pydicom
