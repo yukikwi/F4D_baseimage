@@ -8,4 +8,5 @@ RUN apt update && \
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py && \
     python get-pip.py && \
     apt clean && \
-    pip install -U pydicom
+    pip install -U pydicom && \
+    rm get-pip.py
