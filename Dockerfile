@@ -1,6 +1,7 @@
 FROM ubuntu:focal
 
-RUN apt update && \
+RUN apt clean && \
+    apt update && \
     DEBIAN_FRONTEND="noninteractive" apt install -y tzdata && \
     DEBIAN_FRONTEND="noninteractive" apt install -y make gcc gfortran curl wget less && \
     DEBIAN_FRONTEND="noninteractive" apt install -y python tk gnuplot-x11 python-tk python-numpy desktop-file-utils && \
