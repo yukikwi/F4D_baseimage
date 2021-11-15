@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM debian:stable-slim
 
 RUN apt-get clean && \
     apt-get update && \
